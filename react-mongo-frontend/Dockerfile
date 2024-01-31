@@ -1,29 +1,34 @@
 # Stage 1: Build React app
 FROM node:18-alpine as build
 
-# Set the working directory to /app
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
 COPY package*.json ./
 
-# Install app dependencies
 RUN npm install
 
-# Copy the rest of the application code to the working directory
 COPY . .
 
-# Build the production version of the app
 RUN npm run build
 
 # Stage 2: Use Nginx for serving the built app
 FROM nginx:alpine
 
+# Install OpenSSL
+RUN apk --no-cache add openssl
+
 # Copy the build output from the build stage to the Nginx web root directory
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Expose port 80 for serving the app
-EXPOSE 80
+# Copy SSL certificate and key to the container
+COPY nginx/ssl/nginx.crt  /etc/nginx/cert/nginx.crt
+COPY nginx/ssl/nginx.key /etc/nginx/cert/nginx.key
 
-# The default command starts Nginx in the foreground
+# Copy Nginx configuration
+COPY ./nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
+
+# Expose port 80 and 443 for serving the app over HTTP and HTTPS
+EXPOSE 80
+EXPOSE 443
+
 CMD ["nginx", "-g", "daemon off;"]
