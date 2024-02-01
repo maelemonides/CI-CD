@@ -5,11 +5,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
-# Install react-scripts globally
-RUN npm install -g react-scripts
-
 # Install project dependencies
 RUN npm install
+
+# Install Babel dependencies
+RUN npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-property-in-object
 
 COPY . .
 
