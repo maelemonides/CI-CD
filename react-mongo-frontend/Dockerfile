@@ -5,10 +5,15 @@ WORKDIR /app
 
 COPY package*.json ./
 
+# Install react-scripts globally
+RUN npm install -g react-scripts
+
+# Install project dependencies
 RUN npm install
 
 COPY . .
 
+# Build the React app
 RUN npm run build
 
 # Stage 2: Use Nginx for serving the built app
@@ -21,7 +26,7 @@ RUN apk --no-cache add openssl
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Copy SSL certificate and key to the container
-COPY nginx/ssl/nginx.crt  /etc/nginx/cert/nginx.crt
+COPY nginx/ssl/nginx.crt /etc/nginx/cert/nginx.crt
 COPY nginx/ssl/nginx.key /etc/nginx/cert/nginx.key
 
 # Copy Nginx configuration
