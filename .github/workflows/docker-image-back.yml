@@ -1,0 +1,24 @@
+name: API Backend Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-backend:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Docker
+      uses: docker/setup-buildx-action@v1
+    - name: Set up timestamp
+      run: echo "TIMESTAMP=$(date +%s)" >> $GITHUB_ENV
+    - name: Login to Docker Hub
+      run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
+    - name: Build the Docker image for API backend
+      run: docker build ./api-backend --file ./api/Dockerfile --tag ${{ secrets.DOCKER_USERNAME }}/api:latest
+    - name: Push the Docker image
+      run: docker push ${{ secrets.DOCKER_USERNAME }}/api:latest
