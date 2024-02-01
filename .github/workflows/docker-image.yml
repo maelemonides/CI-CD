@@ -15,8 +15,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Set up Docker
       uses: docker/setup-buildx-action@v1
-    - name: Create Docker Buildx Environment File
-      run: echo "DOCKER_USERNAME=${{ secrets.DOCKER_USERNAME }}" >> $GITHUB_ENV && echo "DOCKER_PASSWORD=${{ secrets.DOCKER_PASSWORD }}" >> $GITHUB_ENV
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image
