@@ -27,7 +27,7 @@ jobs:
 
     - name: Install dependencies
       run: npm ci
-      working-directory: project-root/react-mongo-frontend
+      working-directory: react-mongo-frontend
 
     - name: Build
       run: npm run build --if-present
