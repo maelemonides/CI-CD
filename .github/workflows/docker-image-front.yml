@@ -19,6 +19,6 @@ jobs:
     - name: Login to Docker Hub
       run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
     - name: Build the Docker image for React frontend
-      run: docker build ./ci-cd/react-mongo-frontend --file ./ci-cd/react-mongo-frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/react:latest
+      run: docker build ./react-mongo-frontend --file ./react-mongo-frontend/Dockerfile --tag ${{ secrets.DOCKERHUB_USERNAME }}/react:latest
     - name: Push the Docker image
       run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/react:latest
