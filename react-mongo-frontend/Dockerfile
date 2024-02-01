@@ -1,19 +1,19 @@
 # Stage 1: Build React app
 FROM node:18-alpine as build
 
+
 WORKDIR /app
+
 
 COPY package*.json ./
 
-# Install project dependencies
+
 RUN npm install
 
-# Install react-scripts globally
-RUN npm install -g react-scripts
 
 COPY . .
 
-# Build the React app
+
 RUN npm run build
 
 # Stage 2: Use Nginx for serving the built app
@@ -26,7 +26,7 @@ RUN apk --no-cache add openssl
 COPY --from=build /app/build /usr/share/nginx/html
 
 # Copy SSL certificate and key to the container
-COPY nginx/ssl/nginx.crt /etc/nginx/cert/nginx.crt
+COPY nginx/ssl/nginx.crt  /etc/nginx/cert/nginx.crt
 COPY nginx/ssl/nginx.key /etc/nginx/cert/nginx.key
 
 # Copy Nginx configuration
@@ -35,5 +35,6 @@ COPY ./nginx/nginx.conf /etc/nginx/conf.d/nginx.conf
 # Expose port 80 and 443 for serving the app over HTTP and HTTPS
 EXPOSE 80
 EXPOSE 443
+
 
 CMD ["nginx", "-g", "daemon off;"]
