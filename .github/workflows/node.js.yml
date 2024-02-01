@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./FRONT
+        working-directory: ./react-mongo-frontend
 
     strategy:
       matrix:
