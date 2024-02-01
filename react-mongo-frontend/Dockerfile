@@ -8,8 +8,8 @@ COPY package*.json ./
 # Install project dependencies
 RUN npm install
 
-# Install Babel dependencies
-RUN npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-property-in-object
+# Install Babel dependencies (if needed)
+# RUN npm install --save-dev @babel/core @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-property-in-object
 
 COPY . .
 
