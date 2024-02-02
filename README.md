@@ -12,21 +12,28 @@
 
 ![ci-cd drawio](https://github.com/maelemonides/CI-CD/assets/101704314/603a93ef-6399-452e-a8ac-136dbe1f36d7)
 
-1) Connexion user web app en https (port 443 port 80). Flux aller retour requêtes réponses.
+1. **HTTPS Connection for Web App (Ports 443 and 80):**
+   - Enable secure communication between the web app and users using HTTPS on ports 443 and 80. Facilitate bidirectional data exchange through requests and responses.
 
-2) Gestion des états locaux ou globaux pour suivre la progression.
+2. **Local or Global State Management for Progress Tracking:**
+   - Implement a mechanism for managing local or global states within the web app to track and visualize the progress of various tasks or processes.
 
-3) Lien entre la web app et le back end pour effectuer les requetes.
+3. **Linkage Between Web App and Backend for API Requests:**
+   - Establish a connection between the web app and the backend to facilitate seamless API requests and responses. Ensure a robust communication channel for data exchange.
 
-4) Connexion BDD port 8000.
+4. **Database Connection on Port 8000:**
+   - Set up a connection to the database on port 8000. Allow the web app and backend to interact with the database to perform data operations.
 
-5) AM surveille l'ensemble de l'architecure pour informer en cas d'anomalies.
+5. **Monitoring by Application Monitoring System (AM):**
+   - Employ an Application Monitoring (AM) system to oversee the entire architecture. Receive real-time alerts and notifications in case of anomalies or issues within the system.
 
-6) Connexion pour alimenter les graphs.
+6. **Connection for Graph Data Feed:**
+   - Create a dedicated connection for fetching data to populate graphs within the web app. Ensure a reliable flow of data to visualize information effectively.
 
-7) Recuperer et afficher les schémas.
+7. **Retrieve and Display Schemas:**
+   - Implement functionality to retrieve and display schemas within the web app. Enable users to interact with and comprehend the structure of underlying data.
 
-Certainly! Below is a template for your README.md file that explains what your full project does and provides instructions on how to start the project using Docker Compose. Feel free to customize it based on your specific project details:
+These points outline the key features and connections within the architecture, covering secure web app connections, state management, backend integration, database access, monitoring, data feed for graphs, and schema visualization.
 
 
 This project is a full-stack application that combines a FastAPI backend with a MongoDB database and a React frontend. It provides functionality to manage products, perform health checks, and display a list of products.
