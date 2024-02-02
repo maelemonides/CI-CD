@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+```markdown
+# React Mongo Front
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based frontend for interacting with the FastAPI backend that manages products. It includes components for listing products, performing a health check, and displaying a home page.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+1. Clone the repository:
 
-### `npm start`
+   ```bash
+   git clone https://github.com/your-username/your-frontend-repo.git
+   cd your-frontend-repo
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. Install the dependencies:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   ```bash
+   npm install
+   ```
 
-### `npm test`
+3. Run the React application:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   npm start
+   ```
 
-### `npm run build`
+The application will be accessible at `http://localhost:3000` by default.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **App.js:** The main entry point of the React application. It defines the routes using `react-router-dom`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **components/Home.js:** Displays a list of products on the home page.
 
-### `npm run eject`
+- **components/ListProducts.js:** Displays a list of products fetched from the backend.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- **components/HealthCheck.js:** Performs a health check on the backend to ensure it is running.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **api.js:** Contains functions for making API requests to the FastAPI backend.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Available Routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Home:** `/` - Displays a list of products on the home page.
 
-## Learn More
+- **List Products:** `/products` - Displays a list of products fetched from the backend.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Health Check:** `/health` - Performs a health check on the backend.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Configuration
 
-### Code Splitting
+- Ensure that the backend API URL is correctly set in the `api.js` file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```javascript
+// Update the backend URL if needed
+const API_URL = 'http://localhost:8000';
+```
 
-### Analyzing the Bundle Size
+## Additional Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- This README provides basic usage instructions. For advanced features or customization, refer to the source code and relevant component files.
 
-### Making a Progressive Web App
+- Customize the Nginx configuration (`nginx.conf`) based on your deployment requirements.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- For production deployment, consider optimizing the React application and configuring a proper server setup.
 
-### Advanced Configuration
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Make sure to replace placeholders such as `your-username`, `your-frontend-repo`, and `http://localhost:8000` with your actual GitHub username, frontend repository name, and the correct backend API URL. Additionally, update the content as needed based on any additional features or customization in your React application.
