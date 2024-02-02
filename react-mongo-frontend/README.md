@@ -61,7 +61,3 @@ const API_URL = 'http://localhost:8000';
 - Customize the Nginx configuration (`nginx.conf`) based on your deployment requirements.
 
 - For production deployment, consider optimizing the React application and configuring a proper server setup.
-
-```
-
-Make sure to replace placeholders such as `your-username`, `your-frontend-repo`, and `http://localhost:8000` with your actual GitHub username, frontend repository name, and the correct backend API URL. Additionally, update the content as needed based on any additional features or customization in your React application.
