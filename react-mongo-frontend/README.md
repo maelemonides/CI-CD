@@ -1,4 +1,3 @@
-```markdown
 # React Mongo Front
 
 This project is a React-based frontend for interacting with the FastAPI backend that manages products. It includes components for listing products, performing a health check, and displaying a home page.
