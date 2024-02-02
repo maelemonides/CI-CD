@@ -1,8 +1,4 @@
 # Api
-Certainly! Below is a basic template for your README.md file that explains the endpoints, supported request types (GET and POST), and the port used by your FastAPI application. Feel free to customize it further based on your specific project details:
-
-```markdown
-# Your Project Name
 
 This project is a FastAPI-based API that provides endpoints for managing products. It includes basic CRUD operations (Create, Read, Update, Delete) for product entities.
 
@@ -91,4 +87,3 @@ The API will be accessible at `http://127.0.0.1:8000`.
 
 ```
 
-Make sure to replace placeholders such as `your-username` and `your-repo` with your actual GitHub username and repository name. Additionally, update the content as needed based on any additional features or customization in your FastAPI application.
