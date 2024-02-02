@@ -8,7 +8,7 @@ This project is a FastAPI-based API that provides endpoints for managing product
 
    ```bash
    git clone https://github.com/maelemeonides/ci-cd.git
-   cd your-repo
+   cd ci-cd
    ```
 
 2. Install the dependencies:
