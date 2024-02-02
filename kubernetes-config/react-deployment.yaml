@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: react-mongo-frontend
+  template:
+    metadata:
+      labels:
+        app: react-mongo-frontend
+    spec:
+      containers:
+      - name: react-mongo-frontend
+        image: react
+        ports:
+        - containerPort: 80
