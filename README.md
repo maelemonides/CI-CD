@@ -103,5 +103,3 @@ const API_URL = 'http://localhost:8000';
 - Detailed API documentation for the FastAPI backend can be accessed at [http://localhost:8000/docs](http://localhost:8000/docs).
 
 ```
-
-Make sure to replace placeholders such as `your-username` and `your-full-project` with your actual GitHub username and the name of your project repository. Additionally, update the content as needed based on any additional features or customization in your project.
