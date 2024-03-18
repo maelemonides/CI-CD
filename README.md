@@ -101,5 +101,3 @@ const API_URL = 'http://localhost:8000';
 - Explore each service's specific directories (`./api` for FastAPI, `./react-mongo-frontend` for React) for additional configuration and source code details.
 
 - Detailed API documentation for the FastAPI backend can be accessed at [http://localhost:8000/docs](http://localhost:8000/docs).
-
-```
